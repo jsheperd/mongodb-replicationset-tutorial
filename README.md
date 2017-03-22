@@ -11,7 +11,10 @@ We can start the separate mongod sessions with the start_mongos.sh.
 We will have separate sessions this way.
 
 ## Join the sessions
-In our case I have chosen db01 as our master.
+Start a mongo shell that connects to the db01 server session
+
+    mongo --host 192.168.0.110
+    
 Enter the next commands to the db01 shell
 
     rs.initiate({
@@ -22,6 +25,9 @@ Enter the next commands to the db01 shell
         { _id: 2, host: "192.168.0.112:27017"}
       ]
     })
+    
+The replication has been set up now.
+
 
 ## Insert some records
     db.test.insert({"name":"0001"})
