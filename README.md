@@ -1,5 +1,5 @@
 # mongodb-replicationset-tutorial
-The simplest way to learn mongodb replication management is to run a replication set on your PC. Forget vagrant and vmware, we needn't any of them to learn.
+The simplest way to learn mongodb replication management is to run a replication set on your PC. Forget vagrant and vmware, we needn't any of them to learn. Mongodb can manage your database cluster out of the box with minimal effort.
 
 # How to test replicationsets
 
