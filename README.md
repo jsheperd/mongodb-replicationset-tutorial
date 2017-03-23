@@ -4,40 +4,50 @@ The simplest way to learn mongodb replication management is to run a replication
 # How to test replicationsets
 
 ## Prepare some extra network interfaces
-Mongodb can be started in multiple instances on the same PC. It makes simple to emulate replicationsets on a single machine. You can create new subinterfaces with ./prepare_network.sh. I have used satic ip addresses for this test.
+Mongodb can be started in multiple instances on the same PC. It makes simple to emulate replicationsets on a single machine. You can create new subinterfaces with 
+
+    sudo ./prepare_network.sh
+
+I have used satic ip addresses for this test.
 
 ## Start multiple mongod sessions
-We can start the separate mongod sessions with the start_mongos.sh.
-We will have separate sessions this way.
+We can start the 3 separate mongod sessions with the
+
+    start_mongos.sh
+
+We will have three separate sessions this way.
 
 ## Join the sessions
 Start a mongo shell that connects to the db01 server session
 
-    mongo --host 192.168.0.110
+    mongo --host 127.0.0.11
     
 Enter the next commands to the db01 shell
 
     rs.initiate({
       _id: "rs",
       members: [ 
-        { _id: 0, host: "192.168.0.110:27017"},
-        { _id: 1, host: "192.168.0.111:27017"},
-        { _id: 2, host: "192.168.0.112:27017"}
+        { _id: 0, host: "127.0.0.11"},
+        { _id: 1, host: "127.0.0.12"},
+        { _id: 2, host: "127.0.0.13"}
       ]
     })
     
 The replication has been set up now.
 
 
-## Insert some records
+Insert some records on the PRIMARY
+
     db.test.insert({"name":"0001"})
     db.test.insert({"name":"0002"})
     db.test.insert({"name":"0003"})
 
-## Check the result
+Check the result on the PRIMARY and on the SLAVEs
+
     db.test.find()
 
-## Make slaves readable
+The slave should't allow to read the database, so you have to make it readable
+
     rs.slaveOk()
     
 

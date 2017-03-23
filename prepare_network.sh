@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # Create some new interfaces to run the instances on different ip adresses
-ifconfig enp0s25:0 192.168.0.110/24
-ifconfig enp0s25:1 192.168.0.111/24
-ifconfig enp0s25:2 192.168.0.112/24
+ifconfig lo:1 127.0.0.11/24
+ifconfig lo:2 127.0.0.12/24
+ifconfig lo:3 127.0.0.13/24
