@@ -20,16 +20,16 @@ We will have three separate sessions this way.
 ## Join the sessions
 Start a mongo shell that connects to the db01 server session
 
-    mongo --host 127.0.0.11
+    mongo --host 10.0.0.1
     
 Enter the next commands to the db01 shell
 
     rs.initiate({
       _id: "rs",
       members: [ 
-        { _id: 0, host: "127.0.0.11"},
-        { _id: 1, host: "127.0.0.12"},
-        { _id: 2, host: "127.0.0.13"}
+        { _id: 0, host: "10.0.0.1"},
+        { _id: 1, host: "10.0.0.2"},
+        { _id: 2, host: "10.0.0.3"}
       ]
     })
     
