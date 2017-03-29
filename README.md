@@ -13,7 +13,7 @@ I have used satic ip addresses for this test.
 ## Start multiple mongod sessions
 We can start the 3 separate mongod sessions with the
 
-    start_mongos.sh
+    ./start_mongos.sh
 
 We will have three separate sessions this way.
 
@@ -35,8 +35,25 @@ Enter the next commands to the db01 shell
     
 The replication has been set up now.
 
+You can connect to the replicationset its name and one server's address like:
 
-Insert some records on the PRIMARY
+    mongo --host rs/10.0.0.1
+
+You can also connect to a specific mongodb instance like:
+
+    mongo --host 10.0.0.1
+    
+or
+    
+    mongo --host 10.0.0.2
+    
+or
+
+    mongo --host 10.0.0.3
+    
+
+We can modify records only on the PRIMARY instance.
+The good thing with mongo, we can connect to the PRIMARY by defining the recordset at connection.
 
     db.test.insert({"name":"0001"})
     db.test.insert({"name":"0002"})
