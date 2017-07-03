@@ -4,7 +4,7 @@ Insert something into the replicationset
 
     echo 'db.log.insert({log:"Replicationset is running", at: new Date()})' | mongo --host rs/10.0.0.1
 
-Make a full backup (we have only one record in teh log
+Make a full backup (we have only one record in the log)
 
     mongodump --host rs/10.0.0.1  -o backupOrig
 
