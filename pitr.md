@@ -11,7 +11,7 @@ Make a full backup (we have only one record in the log)
 A little later put some more entries
 
     echo 'db.log.insert({log:"Backup created", at: new Date()})' | mongo --host rs/10.0.0.1
-    echo 'db.log.insert({log:"We are happy, noting is BAD", at: new Date()})' | mongo --host rs/10.0.0.1
+    echo 'db.log.insert({log:"We are happy, nothing is BAD", at: new Date()})' | mongo --host rs/10.0.0.1
     echo 'db.log.insert({log:"BAD things happen", at: new Date()})' | mongo --host rs/10.0.0.1
 
 # Restore the database to the happy state
