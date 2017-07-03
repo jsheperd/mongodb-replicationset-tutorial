@@ -20,11 +20,11 @@ Dump the oplog, where mongo store the database chnages
 
     mongodump --host rs/10.0.0.1 -d local -c oplog.rs -o oplog
     
-Find the time whe we were happy
+Find the time when we were happy
 
     echo 'db.log.find({ log: /BAD/ })' | mongo --host rs/10.0.0.1
 
-it gives the next result in my case
+it gave the next result in my case
 
     MongoDB server version: 3.4.4
     { "_id" : ObjectId("595a61ed4d1e3830ed373249"), "log" : "We are happy, nothing is BAD", "at" : ISODate("2017-07-03T15:25:33.604Z") }
