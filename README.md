@@ -29,11 +29,11 @@ Enter the next commands to the db01 shell
       members: [ 
         { _id: 0, host: "10.0.0.1"},
         { _id: 1, host: "10.0.0.2"},
-        { _id: 2, host: "10.0.0.3"}
+        { _id: 2, host: "10.0.0.3", hidden: true, priority: 0,  slaveDelay: NumberLong(3600)}
       ]
     })
     
-The replication has been set up now.
+The replication has been set up now with point in time recovery capabilities.
 
 You can connect to the replicationset its name and one server's address like:
 
