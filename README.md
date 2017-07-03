@@ -55,16 +55,14 @@ or
 We can modify records only on the PRIMARY instance.
 The good thing with mongo, we can connect to the PRIMARY by defining the recordset at connection.
 
-    db.test.insert({"name":"0001"})
-    db.test.insert({"name":"0002"})
-    db.test.insert({"name":"0003"})
+    db.log.insert({log:"Replicationset up and running", at: new Date()})
 
 Check the result on the PRIMARY and on the SLAVEs
 
-    db.test.find()
+    db.log.find()
 
 The slave should't allow to read the database, so you have to make it readable
 
     rs.slaveOk()
     
-
+The delayed slave will show the entry only 3600 seconds later.
