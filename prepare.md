@@ -24,7 +24,8 @@ Enter the next commands to the db01 shell
       members: [ 
         { _id: 0, host: "10.0.0.1"},
         { _id: 1, host: "10.0.0.2"},
-        { _id: 2, host: "10.0.0.3", hidden: true, priority: 0,  slaveDelay: NumberLong(3600)}
+        { _id: 2, host: "10.0.0.3", arbiterOnly: true},
+        { _id: 3, host: "10.0.0.4", hidden: true, priority: 0,  slaveDelay: NumberLong(3600), votes: 0 }
       ]
     })
     
