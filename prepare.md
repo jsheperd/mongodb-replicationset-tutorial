@@ -31,7 +31,7 @@ Enter the next commands to the db01 shell
     
 The replication has been set up now with point in time recovery capabilities.
 
-You can connect to the replicationset its name and one server's address like:
+You can connect to the replicationset by its name and one server's address like:
 
     mongo --host rs/10.0.0.1
 
